@@ -9,6 +9,7 @@ import {
   HStack,
 } from "@chakra-ui/react";
 import { IoIosAirplane, IoIosMenu } from "react-icons/io";
+import ColorModeSwitch from "./ColorModeSwitch";
 
 function Navbar() {
   return (
@@ -38,6 +39,7 @@ function Navbar() {
             </MenuList>
           </Show>
         </Menu>
+        <ColorModeSwitch />
       </HStack>
     </>
   );
