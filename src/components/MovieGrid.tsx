@@ -1,25 +1,15 @@
-import { useEffect, useState } from "react";
-import apiClient from "../services/api-Client";
-import { IFetchMoviesList, IMovie } from "../Interface";
 import { Image, Text } from "@chakra-ui/react";
-import { HiOutlineEllipsisHorizontalCircle } from "react-icons/hi2";
+import UseMovies from "../hooks/useMovies";
 
 const MovieGrid = () => {
-  const [movies, setMovies] = useState<IMovie[]>([]);
-  const [error, setError] = useState("");
-
-  useEffect(() => {
-    apiClient
-      .get<IFetchMoviesList>("movies")
-      .then((res) => {
-        setMovies(res.data.data);
-        console.log(movies);
-      })
-      .catch((err) => setError(err.message));
-  }, []);
+  const [error, movies] = UseMovies();
   return (
     <>
-      {error && <Text>{error}</Text>}
+      {error && (
+        <Text color="tomato" fontSize={"2xl"}>
+          {error}
+        </Text>
+      )}
       <ul>
         {movies.map((m) => {
           return (
