@@ -18,12 +18,12 @@ function App() {
           {" "}
           <Navbar />
         </GridItem>
-        <Show above="md">
+        <Show above="lg">
           <GridItem bg={"orange"} area={"sideMenu"}>
             sideMenu
           </GridItem>
         </Show>
-        <GridItem bg={"blue"} area={"main"}>
+        <GridItem area={"main"}>
           <MovieGrid />
         </GridItem>
       </Grid>
