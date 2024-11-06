@@ -1,0 +1,9 @@
+.genContainer > a {
+  margin-right: .6rem;
+  background-color: rgb(242, 242, 242);
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: .3rem;
+  cursor: pointer;
+  overflow-wrap: break-word ;
+}
