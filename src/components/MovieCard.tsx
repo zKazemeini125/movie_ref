@@ -1,4 +1,5 @@
 import {
+  Badge,
   Button,
   Card,
   CardBody,
@@ -8,7 +9,6 @@ import {
   Stack,
 } from "@chakra-ui/react";
 import { IMovie } from "../Interface";
-import "../styles/MovieCard.css";
 import { IoArrowForward } from "react-icons/io5";
 interface Props {
   movie: IMovie;
@@ -33,9 +33,7 @@ const MovieCard = ({ movie }: Props) => {
           </Heading>
           <div className="genContainer">
             {movie.genres.map((g) => (
-              <a>
-                <span>{g}</span>
-              </a>
+              <Badge p={1} mr={2}>{g}</Badge>
             ))}
           </div>
           <HStack justify={"flex-end"}>
