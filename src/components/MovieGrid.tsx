@@ -1,9 +1,11 @@
 import { SimpleGrid, Text } from "@chakra-ui/react";
 import UseMovies from "../hooks/useMovies";
 import MovieCard from "./MovieCard";
+import MovieCardSkeleton from "./MovieCardSkeleton";
 
 const MovieGrid = () => {
-  const [error, movies] = UseMovies();
+  const [error, movies, isLoading] = UseMovies();
+  const skelconCunt=[1,2,3,4,5,6,7,8,9,10];
   return (
     <>
       {error && (
@@ -12,6 +14,9 @@ const MovieGrid = () => {
         </Text>
       )}
       <SimpleGrid columns={{ sm: 1, md: 3, lg: 4 }} spacing={3} pb="10" >
+        {isLoading && skelconCunt.map((
+          
+        )=> <MovieCardSkeleton/>)}
         {movies.map((m) => {
           return <MovieCard movie={m} />;
         })}
