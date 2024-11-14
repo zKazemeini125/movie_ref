@@ -13,7 +13,7 @@ const MovieGrid = () => {
           {error}
         </Text>
       )}
-      <SimpleGrid columns={{ sm: 1, md: 3, lg: 4 }} spacing={3} pb="10" >
+      <SimpleGrid columns={{ sm: 1, md: 3, lg: 3,xl:4 }} spacing={3} pb="10" >
         {isLoading && skelconCunt.map((
           
         )=> <MovieCardSkeleton/>)}
