@@ -8,3 +8,11 @@ export interface IMovie {
   images: string[3];
   genres: Array<string>;
 }
+export interface IFetchMoviesGenres {
+  data: IGenres[];
+}
+
+export interface IGenres {
+  id: number;
+  name: string;
+}

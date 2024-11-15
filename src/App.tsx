@@ -1,6 +1,7 @@
 import { Grid, GridItem, Show } from "@chakra-ui/react";
 import Navbar from "./components/Navbar";
 import MovieGrid from "./components/MovieGrid";
+import MovieGenres from "./components/MovieGenres";
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
         </GridItem>
         <Show above="lg">
           <GridItem bg={"orange"} area={"sideMenu"}>
-            sideMenu
+            <MovieGenres/>
           </GridItem>
         </Show>
         <GridItem area={"main"}>
