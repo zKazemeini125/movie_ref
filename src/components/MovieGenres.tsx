@@ -1,4 +1,4 @@
-import {Text } from "@chakra-ui/react";
+import { Box, Card, CardBody, Text, VStack } from "@chakra-ui/react";
 import UseGenres from "../hooks/useGenres";
 
 const MovieGenres = () => {
@@ -11,11 +11,32 @@ const MovieGenres = () => {
         </Text>
       )}
 
-      <ul>
-        {(genres&& genres.length>0)? genres.map((gen) => (
-          <li><a href="#">{gen.name}</a></li>
-        )):<Text>no genres</Text>}
-      </ul>
+      <Box mr={2} w={"15em"}>
+        <Card >
+          <CardBody>
+            <VStack spacing={5} alignItems={"start"}>
+              {genres && genres.length > 0 ? (
+                genres.map((gen) => (
+                  <Box className="list-group-item">
+                    <a href="#">
+                      <Text
+                        fontSize={{
+                          md: "1.5rem",
+                          lg: "1.2rem",
+                        }}
+                      >
+                        {gen.name}
+                      </Text>
+                    </a>
+                  </Box>
+                ))
+              ) : (
+                <Text>no genres</Text>
+              )}
+            </VStack>
+          </CardBody>
+        </Card>
+      </Box>
     </>
   );
 };

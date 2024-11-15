@@ -8,8 +8,8 @@ function App() {
     <>
       <Grid
         templateAreas={{
-          base: `"navbar" "main"`,
-          lg: `"navbar navbar" "sideMenu main" `,
+          base: `"navbar" "main" "footer"`,
+          lg: `"navbar navbar" "sideMenu main" "sideMenu footer"`,
         }}
         gap={1}
         mt={5}
@@ -20,12 +20,15 @@ function App() {
           <Navbar />
         </GridItem>
         <Show above="lg">
-          <GridItem bg={"orange"} area={"sideMenu"}>
+          <GridItem area={"sideMenu"}>
             <MovieGenres/>
           </GridItem>
         </Show>
         <GridItem area={"main"}>
           <MovieGrid />
+        </GridItem>
+        <GridItem area={"footer"} bg={"tomato"}>
+          footer
         </GridItem>
       </Grid>
     </>
